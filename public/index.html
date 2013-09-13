@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='App'>
+<head>
+  <title>AngularJS App</title>
+
+  <!-- LIBRARIES -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.js'></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+  <!-- STYLE / THEME -->
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+  <!-- <link href="//cdncatalog.com/assets/flat-ui/css/flat-ui.css" rel="stylesheet"> -->
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Bitter:400,700|Source+Code+Pro:400,500' rel='stylesheet' type='text/css'>
+  <link href="view/css/lemonade.css" rel="stylesheet">
+  <link href="view/css/style.css" rel="stylesheet">
+
+  <!-- THIS APP. -->
+  <script src='App.js'></script>
+  <script src='controller/controllers.js'></script>
+  <script src='model/Model.js'></script>
+</head>
+
+<body class="container">
+
+  <div class="navbar">
+    <p class="navbar-text pull-right">
+      <span ng-controller="UserCtrl" ng-repeat="user in users">
+        Logged in as Guest
+      </span>
+    </p>
+    <ul class="nav">
+      <li class="active"><a href="#/view1">Home</a></li>
+      <li><a href="#/view2">About</a></li>
+    </ul>
+  </div><!--/.nav-collapse -->
+
+    <div class="container-fluid">
+      <div class="frame">
+        <div class="bit-1">
+          <div class="hero-unit">
+            <h1>Web App MVC Template</h1>
+            <p>This is a web application starter template built with AngularJS with an MVC structure</p>
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+      <div class="frame" ng-view><!-- VIEWS --></div>
+    </div><!--/.fluid-container-->
+
+</body>
+</html>
